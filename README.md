@@ -1,9 +1,49 @@
-# Vue 3 + TypeScript + Vite
+# LIGHTSPEED
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Information
 
-## Recommended Setup
+### Author
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+```
+Hovhannes Keshishyan
+```
 
-- Use [vue-tsc](https://github.com/vuejs/language-tools/tree/master/packages/tsc) for performing the same type checking from the command line, or for generating d.ts files for SFCs.
+### Project tested on
+
+```
+Node - 20.9.0
+NPM - 9.3.1
+```
+
+### Technologies
+
+```
+# Vue 3 + TypeScript + Vite + HTML/CSS/SCSS
+```
+
+## Project setup
+
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+
+```
+npm run dev
+```
+
+### Compiles and minifies for production
+
+```
+npm run build
+```
+
+### Live Demo
+
+[https://lightspeed-store.netlify.app/](https://lightspeed-store.netlify.app/).
+
+
+### Github URL
+
+[https://github.com/Hovhannes1991/lightspeed](https://github.com/Hovhannes1991/lightspeed).
