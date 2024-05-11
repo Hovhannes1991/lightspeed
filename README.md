@@ -41,9 +41,9 @@ npm run build
 
 ### Live Demo
 
-[https://lightspeed-store.netlify.app/](https://lightspeed-store.netlify.app/).
+[https://lightspeed-store.netlify.app/](https://lightspeed-store.netlify.app/)
 
 
 ### Github URL
 
-[https://github.com/Hovhannes1991/lightspeed](https://github.com/Hovhannes1991/lightspeed).
+[https://github.com/Hovhannes1991/lightspeed](https://github.com/Hovhannes1991/lightspeed)
