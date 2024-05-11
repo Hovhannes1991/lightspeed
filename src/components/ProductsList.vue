@@ -7,10 +7,17 @@ import Button from "primevue/button";
 import {useRouter} from "vue-router";
 import type {IProduct} from '@/types/types.ts';
 import {useCartStore} from "@/stores/cart.ts";
-
-const cart_store = useCartStore()
+import {useToast} from "@/composables/useToast.ts";
 
 const router = useRouter();
+
+const {success} = useToast();
+const cart_store = useCartStore();
+const addToCart = (product: IProduct) => {
+  cart_store.addToCart(product);
+  success("Added to Cart!");
+}
+
 
 interface IProps {
   products: IProduct[];
@@ -51,7 +58,7 @@ const openProductPage = (e: { data: IProduct }) => {
       </Column>
       <Column header="Add to Cart">
         <template #body="slotProps">
-          <Button @click="cart_store.addToCart(slotProps.data)" label="Add to Cart"/>
+          <Button @click="addToCart(slotProps.data)" label="Add to Cart"/>
         </template>
       </Column>
     </DataTable>
