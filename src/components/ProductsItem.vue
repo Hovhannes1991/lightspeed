@@ -31,12 +31,15 @@ const addToCart = (product: IProduct) => {
     <Message v-if="props.error" severity="error">{{ error }}</Message>
     <TheLoader v-else-if="props.loading"/>
     <Card v-else class="product-card">
-      <template #title>{{ props.product.name }}</template>
-      <template #content>
-        <p class="m-0">{{ props.product.price }} &#8381;</p>
-      </template>
       <template #header>
         <img :src="props.product.imageUrl" :alt="props.product.name"/>
+      </template>
+      <template #title>{{ props.product.name }}</template>
+      <template #subtitle>
+        <div v-html="props.product.description"></div>
+      </template>
+      <template #content>
+        <p class="text-3xl m-0">{{ props.product.price }} &#8381;</p>
       </template>
       <template #footer>
         <div class="flex gap-3 mt-1">
@@ -50,7 +53,7 @@ const addToCart = (product: IProduct) => {
 <style scoped lang="scss">
 .single-product {
   background-color: black;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .product-card {
