@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Button from "primevue/button";
 import {useRouter} from "vue-router";
 import {computed} from "vue";
 
@@ -55,19 +56,19 @@ const totalPrice = computed(() => props.cartItem.count * props.cartItem.product.
         </div>
       </div>
       <div class="cart-item__buttons">
-        <button v-if="props.cartItem.count > 1"
-                @click="cart_store.decreaseItemCount(props.cartItem.id)"
-                class="decrease-btn">
-          <span>Decrease</span>
-        </button>
-        <button @click="cart_store.deleteFromCart(props.cartItem.id)"
-                class="remove-btn">
-          <span>Remove</span>
-        </button>
-        <button @click="priceOrder(props.cartItem.id)"
-                class="place-order-btn">
-          <span>Place order</span>
-        </button>
+        <Button @click="cart_store.decreaseItemCount(props.cartItem.id)"
+                icon="pi pi-minus"
+                :disabled="props.cartItem.count === 1"
+                aria-label="Decrease"/>
+        <Button @click="cart_store.addToCart(props.cartItem.product)"
+                icon="pi pi-plus"
+                aria-label="Increase"/>
+        <Button @click="cart_store.deleteFromCart(props.cartItem.id)"
+                severity="danger"
+                label="Delete"/>
+        <Button @click="priceOrder(props.cartItem.id)"
+                severity="success"
+                label="Place order"/>
       </div>
     </div>
   </div>
@@ -137,31 +138,6 @@ const totalPrice = computed(() => props.cartItem.count * props.cartItem.product.
       display: flex;
       align-items: center;
       gap: 24px;
-
-      button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        outline: none;
-        border: 2px solid transparent;
-        padding: 10px 20px;
-        border-radius: 12px;
-        font-size: 18px;
-        color: white;
-        cursor: pointer;
-
-        &.decrease-btn {
-          background-color: #bb5110;
-        }
-
-        &.remove-btn {
-          background-color: red;
-        }
-
-        &.place-order-btn {
-          background-color: #059669;
-        }
-      }
     }
   }
 }
