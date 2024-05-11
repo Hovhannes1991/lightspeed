@@ -18,7 +18,7 @@ export interface ICategory {
 }
 
 export interface ICategoriesResponse {
-    items: IProduct[];
+    items: ICategory[];
 }
 
 
